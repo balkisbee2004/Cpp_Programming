@@ -7,35 +7,35 @@ private:
     double imag;
 
 public:
-    // Default constructor
+
     Complex() : real(0), imag(0) {}
 
-    // Parameterized constructor
+
     Complex(double r, double i) : real(r), imag(i) {}
 
-    // Operator overloading: addition
+
     Complex operator+(const Complex& other) const {
         return Complex(real + other.real, imag + other.imag);
     }
 
-    // Operator overloading: subtraction
+
     Complex operator-(const Complex& other) const {
         return Complex(real - other.real, imag - other.imag);
     }
 
-    // Operator overloading: multiplication
+
     Complex operator*(const Complex& other) const {
         double r = real * other.real - imag * other.imag;
         double i = real * other.imag + imag * other.real;
         return Complex(r, i);
     }
 
-    // Operator overloading: equality
+
     bool operator==(const Complex& other) const {
         return real == other.real && imag == other.imag;
     }
 
-    // Friend function: input
+
     friend istream& operator>>(istream& in, Complex& c) {
         cout << "Enter real part: ";
         in >> c.real;
@@ -44,7 +44,7 @@ public:
         return in;
     }
 
-    // Friend function: output
+
     friend ostream& operator<<(ostream& out, const Complex& c) {
         if (c.imag < 0)
             out << c.real << " - " << -c.imag << "i";
