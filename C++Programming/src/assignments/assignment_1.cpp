@@ -32,7 +32,7 @@ public:
     }
 
     ~Rectangle() {
-        cout << "Rectangle Destructor\n";
+        cout << "Rectangle Destructor\n";//
     }
 };
 
